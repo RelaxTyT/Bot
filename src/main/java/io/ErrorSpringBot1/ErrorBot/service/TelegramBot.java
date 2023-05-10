@@ -48,8 +48,6 @@ public class TelegramBot extends TelegramLongPollingBot {
     static final String NOT_FOUND ="Не найдено";
     static final String FOUND = "Найдено";
     static final String YES_BUTTON = "YES_BUTTON";
-    static final String TEST = "Отдельное спасибо за тестирование бота и уделённое время ";
-    static final String TH = "Спасибо за терпение: Климец Татьяне ";
     static final String NO_BUTTON = "NO_BUTTON";
     static final String REMOVE_USER ="REMOVE_USER";
     static final String ERROR_TEXT = "Error occurred: ";
