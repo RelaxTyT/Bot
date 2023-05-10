@@ -1,0 +1,35 @@
+<configuration>
+
+        <property name="HOME_LOG" value="C:/Users/mirbo/OneDrive/Desktop/ErrorBot1.0/src/main/ErrorLog/ErrorLog.log"/>
+
+    <appender name="FILE-ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${HOME_LOG}</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>/var/log/proj3ct.io/tg-simple-bot/app.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <!-- Максимальный размер файла  -->
+            <maxFileSize>10MB</maxFileSize>
+            <!-- Максимальный размер архива -->
+            <totalSizeCap>1GB</totalSizeCap>
+            <!-- 30 дне хранения -->
+            <maxHistory>60</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d %p %c{1.} [%t] %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="io.ErrorSpringBot1.ErrorBot" level="debug" additivity="false">
+        <appender-ref ref="FILE-ROLLING"/>
+    </logger>
+
+    <root level="error">
+        <appender-ref ref="FILE-ROLLING"/>
+    </root>
+
+    <root level="info">
+        <appender-ref ref="FILE-ROLLING"/>
+    </root>
+
+</configuration>
